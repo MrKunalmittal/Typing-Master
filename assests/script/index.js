@@ -24,7 +24,7 @@ const hitSound = new Audio('./assests/media/hit.wav');
 hitSound.type = 'audio/wav;'
 
 
-let timerCount = 20;
+let timerCount = 99;
 
 
 function timer() {
