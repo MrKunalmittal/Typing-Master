@@ -1,0 +1,169 @@
+@import './reset.css';
+
+:root {
+    --app-dark-bg: #1a1d28;
+    --app-red: #ff3c57;
+    --app-green: #33ab4e;
+    --app-purple: #833cff;
+    --app-orange: #ff833c;
+    --app-blue: #3c57ff;
+    --app-blue-hover: #364ee6;
+    --app-white: #fff;
+    --app-branding: #ff3c57;
+}
+
+body{
+    background: #4e54c8;  
+    background: url("../media/shot-by-cerqueira-0o_GEzyargo-unsplash.jpg") center center /cover no-repeat;
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.container {
+    width: min(100% - 30px, 1280px);
+    margin-inline: auto;
+}
+h1{
+    color: #ff3c57;
+    font-family: cursive;
+    font-size: 60px;
+}
+h1 span{
+    color: #33ab4e;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ----------------------------------- */
+/* ---------content------------------- */
+.main-content{
+    
+    margin-inline: auto;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+   
+}
+.content {
+    /* height: 100vh; */
+    display: grid; 
+    place-items: center;
+    justify-items: center;
+    margin-top: 10px;
+    /* position: relative;  */
+}
+h3{
+    color: #d6d6d6;
+    margin-top: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-style: oblique; */
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.text{
+    margin-top: 10px;
+    border:2px solid #fff;
+    border-radius: 4px;
+    display: block;
+    width:190px;
+    height: 40px;
+    padding : 15px;
+    font-size: 20px;
+    /* margin-bottom: 20px; */
+    background-color: #191919;
+    color: #d6d6d6;
+    text-align: center;
+
+}
+.time{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    height: 35px;
+    width: 150px;
+    border-radius: 15px;
+    background-color: green;
+    color: #fff;
+    text-align: center;
+    line-height: 25px; 
+    
+}
+.timer {
+    padding-top: 5px;
+    line-height: 25px;
+}
+.para{
+    
+    border-radius: 10px;
+    color: #fff;
+    min-width: 70px;
+    height: 40px;
+   
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+/* .btn{
+    height: 40px;
+    width: 90px;
+    margin-top: -150px;
+    background-color: red;
+    border-radius: 10px;
+} */
+
+.btn {
+    height: 40px;
+    width: 90px;
+    margin-top: -150px;
+	box-shadow: 0px 11px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:18px;
+	font-style:italic;
+	/* padding:13px 32px; */
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.btn:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.hits {
+    
+    top: 10px;
+    left: 50px;
+    width: 90px;
+    color: #fff;
+    height: 30px;
+    position: fixed;
+    font-size: 18px;
+    font-weight: 700;
+    
+}
+
+.result{
+  
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(242, 234, 234);
+    box-shadow: #1a1d28;
+    text-align: center;
+    place-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+
+
+
+
