@@ -114,12 +114,9 @@ onEvent('click',btn,function() {
 
 });
 
-
-
-
-
-
 text.addEventListener('keyup', inputValue)
+
+
     
 
 

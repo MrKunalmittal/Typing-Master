@@ -76,6 +76,7 @@ h3{
     background-color: #191919;
     color: #d6d6d6;
     text-align: center;
+    /* user-select: none; */
 
 }
 .time{
