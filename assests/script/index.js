@@ -17,6 +17,11 @@ const btn = select('.btn');
 let hit1 = select('.hits');
 let result = select('.result');
 const restart = select('.restart');
+const boardBtn = select('.board');
+const scoreboard = select('.score-board');
+let scoreArray = [];
+let scoreData = select('.score');
+let scoreList = select('.list');
 
 const music = new Audio('./assests/media/sound.mp3');
 music.type = 'audio/mp3;'
@@ -26,6 +31,41 @@ hitSound.type = 'audio/wav;'
 
 text.disabled = true;
 let timerCount = 9;
+
+function save() {
+    let percentageScore = ((hits / 90 ) * 100).toFixed(2);
+    const scoreArray = JSON.parse(localStorage.getItem('scoreArray')) || [];
+
+    const score = {
+        
+        hits : hits,
+        percentage : percentageScore
+    };
+
+    scoreArray.push(score);
+    console.log(scoreArray);
+
+    scoreArray.sort((a,b) => b.hits - a.hits);
+
+    scoreArray.splice(9);
+
+    localStorage.setItem('scoreArray',JSON.stringify(scoreArray));
+    if(localStorage.length > 0 ){
+    scoreList.innerHTML = scoreArray.map(score => {
+        return ` 
+                   
+                    <li>${score.hits} Words    ${score.percentage}%</li></br>`
+                    
+                
+
+    }).join('');
+    } else {
+        return;
+    }
+    
+}
+
+
 
 
 function timer() {
@@ -91,14 +131,14 @@ function inputValue(){
         shufle();
         music.pause();
         hitSound.play();
-
+        music.play();
     } 
 }
 let date = new Date();
 let currDate = date.toString().substring(4,15);
 
 function calpercentage(){
-    let percentage = ((hits / 90 ) * 100).toFixed(3);
+    let percentage = ((hits / 90 ) * 100).toFixed(2);
     return percentage;
 }
 
@@ -115,17 +155,22 @@ onEvent('click',btn,function() {
     shufle();
     
     inputValue();
-    // btn.style.visibility = 'hidden';
+    
     
 
 });
-// onEvent('click',restart,function(){
 
-// });
 
 text.addEventListener('keyup', inputValue)
 
+onEvent('click',boardBtn,function(){
+    scoreboard.style.visibility = 'visible';
+    save();
 
+    
+    console.log(`${score.hits}`);
+    
+});
     
 
 

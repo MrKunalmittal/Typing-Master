@@ -37,10 +37,27 @@ h1{
     font-family: cursive;
     font-size: 60px;
     font-family: 'Times New Roman', Times, serif;
+    animation: tracking-in-contract 1.6s ease-in both;
+
 }
+@keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+  
 h1 span{
     color: #33ab4e;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
 }
 
 /* ----------------------------------- */
@@ -198,3 +215,77 @@ h3{
 }
 
 
+/* ------------------------- */
+/* ---score-board----------- */
+.score-board{
+    background-color: #191919;
+    /* height: 60vh; */
+    width: 25%;
+    /* height: 70vh; */
+    height: auto;
+    top: 160px;
+    /* right: 10px; */
+    left: 55px;
+    position: fixed;
+    opacity: 0.6;
+    visibility: hidden;
+    display: grid;
+    place-items: center;
+    border-radius: 5%;
+    
+}
+.score-board h4 {
+    text-align: center;
+    color: #33ab4e;
+    font-size: 35px;
+    font-weight: 600;
+   ;
+}
+.score-board span {
+    color: rgb(247, 179, 8);
+    opacity: 1;
+}
+.board{
+    top: 50px;
+    right: 90px;
+    height: 40px;
+    width: 140px;
+    /* margin-top: -150px; */
+	box-shadow: 0px 11px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:18px;
+	font-style:italic;
+	/* padding:13px 32px; */
+	text-decoration:none;
+    margin-top: 20px;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.score{
+    color: #d6d6d6;
+    place-items: center;
+    place-content: center;
+    /* background-color: #33ab4e; */
+    width: 90%;
+    /* height: 55vh; */
+    display: flex;
+    list-style: none;
+    /* place-content: center;
+    place-items: center; */
+
+}
+.list {
+    /* display: flex; */
+    width:100%;
+    padding: 10px;
+    margin-left: 20px;
+    font-size: medium;
+    font-weight: bold;
+    color: #33ab4e;
+    
+}
