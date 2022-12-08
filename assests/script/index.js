@@ -30,10 +30,10 @@ const hitSound = new Audio('./assests/media/hit.wav');
 hitSound.type = 'audio/wav;'
 
 text.disabled = true;
-let timerCount = 9;
+let timerCount = 25;
 
 function save() {
-    let percentageScore = ((hits / 90 ) * 100).toFixed(2);
+    let percentageScore = Math.floor((hits / 90 ) * 100).toFixed(2);
     const scoreArray = JSON.parse(localStorage.getItem('scoreArray')) || [];
 
     const score = {
@@ -54,11 +54,13 @@ function save() {
     scoreList.innerHTML = scoreArray.map(score => {
         return ` 
                    
-                    <li>${score.hits} Words    ${score.percentage}%</li></br>`
+                    <li>${score.hits} Words ${score.percentage}%</li></br>
+                `
                     
                 
 
     }).join('');
+    
     } else {
         return;
     }
@@ -72,12 +74,12 @@ function timer() {
     
     let counter = setInterval(function() {
         timerCount = timerCount-1;
-        timerOne.innerHTML =`Time left: ${timerCount}`;
+        timerOne.innerHTML =` <i class="fa-solid fa-clock"></i> Time left: ${timerCount} s` ;
 
         if(timerCount <= 0){
             timerOne.innerText = 'OOPS !';
             display.innerText ='';
-            // hit1.innerText= `Hits: 0`;
+          
             text.value = '';
             music.pause();
             score();
@@ -155,6 +157,7 @@ onEvent('click',btn,function() {
     shufle();
     
     inputValue();
+    scoreboard.style.visibility = 'hidden';
     
     
 
