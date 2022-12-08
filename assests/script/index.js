@@ -86,6 +86,8 @@ function timer() {
             music.pause();
             score();
             btn.style.visibility = 'hidden';
+            scoreboard.style.visibility = 'visible';
+    save();
             // whole.style.visibility = 'visible';
             // restart.style.visibility = 'visible';
 
@@ -132,7 +134,7 @@ function inputValue(){
     if(data === display.innerText ){
         console.log('hello');
         hits++;
-        hit1.innerText= `Hits: ${hits}`;
+        hit1.innerText= ` Hits: ${hits}`;
         text.value = '';
         shufle();
         music.pause();
