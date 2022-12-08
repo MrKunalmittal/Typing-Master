@@ -16,6 +16,7 @@ let display = select('.para');
 const btn = select('.btn');
 let hit1 = select('.hits');
 let result = select('.result');
+const restart = select('.restart');
 
 const music = new Audio('./assests/media/sound.mp3');
 music.type = 'audio/mp3;'
@@ -23,8 +24,8 @@ music.type = 'audio/mp3;'
 const hitSound = new Audio('./assests/media/hit.wav');
 hitSound.type = 'audio/wav;'
 
-
-let timerCount = 99;
+text.disabled = true;
+let timerCount = 9;
 
 
 function timer() {
@@ -40,6 +41,8 @@ function timer() {
             text.value = '';
             music.pause();
             score();
+            btn.style.visibility = 'hidden';
+            // restart.style.visibility = 'visible';
         }
     }, 1000)
     
@@ -71,7 +74,7 @@ let wordsCopy = [...words];
          let rsm = Math.floor(Math.random() * wordsCopy.length);
          display.innerText = wordsCopy[rsm];
     
-         rsm.splice(wordsCopy, 1);
+         wordsCopy.splice(rsm, 1);
     }
 
 
@@ -105,14 +108,20 @@ function score() {
 }
 
 onEvent('click',btn,function() {
+    text.disabled = false;
+    text.focus();   
     timer();
     music.play();
     shufle();
-    // text.value = '';
+    
     inputValue();
+    // btn.style.visibility = 'hidden';
     
 
 });
+// onEvent('click',restart,function(){
+
+// });
 
 text.addEventListener('keyup', inputValue)
 
