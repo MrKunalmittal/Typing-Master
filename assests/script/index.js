@@ -22,6 +22,7 @@ const scoreboard = select('.score-board');
 let scoreArray = [];
 let scoreData = select('.score');
 let scoreList = select('.list');
+let whole = select('.score-board score');
 
 const music = new Audio('./assests/media/sound.mp3');
 music.type = 'audio/mp3;'
@@ -33,6 +34,7 @@ text.disabled = true;
 let timerCount = 25;
 
 function save() {
+    let rank = 1;
     let percentageScore = Math.floor((hits / 90 ) * 100).toFixed(2);
     const scoreArray = JSON.parse(localStorage.getItem('scoreArray')) || [];
 
@@ -54,15 +56,15 @@ function save() {
     scoreList.innerHTML = scoreArray.map(score => {
         return ` 
                    
-                    <li>${score.hits} Words ${score.percentage}%</li></br>
+        <li><span># </span>${rank++}   &nbsp&nbsp&nbsp&nbsp ${score.hits} words &nbsp&nbsp&nbsp&nbsp ${score.percentage}%</li></br>
                 `
                     
                 
 
     }).join('');
-    
+
     } else {
-        return;
+        return ;
     }
     
 }
@@ -84,7 +86,9 @@ function timer() {
             music.pause();
             score();
             btn.style.visibility = 'hidden';
+            // whole.style.visibility = 'visible';
             // restart.style.visibility = 'visible';
+
         }
     }, 1000)
     
@@ -171,7 +175,7 @@ onEvent('click',boardBtn,function(){
     save();
 
     
-    console.log(`${score.hits}`);
+    // console.log(`${score.hits}`);
     
 });
     
